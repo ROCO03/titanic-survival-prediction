@@ -1,30 +1,12 @@
 import pandas as pd
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.impute import SimpleImputer
 
-def load_data(path):
-    return pd.read_csv(path)
+df = pd.read_csv('train.csv')
 
-def build_preprocessor():
-    numeric_features = ["Age", "Fare", "SibSp", "Parch"]
-    categorical_features = ["Sex", "Embarked", "Pclass"]
+print("--- 5 Filas ---")
+print(df.head(5))
 
-    numeric_pipeline = Pipeline(steps=[
-        ("imputer", SimpleImputer(strategy="median"))
-    ])
+print("\n--- Información General ---")
+print(df.info())
 
-    categorical_pipeline = Pipeline(steps=[
-        ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("encoder", OneHotEncoder(handle_unknown="ignore"))
-    ])
-
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ("num", numeric_pipeline, numeric_features),
-            ("cat", categorical_pipeline, categorical_features),
-        ]
-    )
-
-    return preprocessor
+print("\n--- Resumen Estadístico ---")
+print(df.describe())
