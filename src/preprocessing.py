@@ -27,6 +27,7 @@ X['Sex'] = X['Sex'].map({'male': 0, 'female': 1})
 enconder = OneHotEncoder(sparse_output=False, drop = 'first')
 
 embarked_encoded = enconder.fit_transform(X[['Embarked']])
+
 embarked_df = pd.DataFrame(
     embarked_encoded,
     columns=enconder.get_feature_names_out(['Embarked']),
