@@ -133,22 +133,6 @@ Confusion Matrix:
  [19 54]]
 ```
 
----
-
-## 🔮 Future Improvements
-
-Planned next steps to evolve the project toward production ML standards:
-
-- Cross Validation (K-Fold)
-- Hyperparameter Tuning (GridSearchCV / RandomSearchCV)
-- Tree-Based Models (Random Forest, XGBoost)
-- Feature Scaling Experiments
-- Pipeline Integration (sklearn Pipeline + ColumnTransformer)
-- Model Versioning
-- Experiment Tracking
-
----
-
 ## 🧠 Learning Goals
 
 This project was built to practice:
